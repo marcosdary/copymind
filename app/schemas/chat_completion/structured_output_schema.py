@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 
-from app.constants import ToneEnum, LanguageEnum
+from app.core.constants import ToneEnum, LanguageEnum
 
 class StructuredOutputSchema(BaseModel):
     answer: list[str] = Field(min_length=1)

@@ -1,4 +1,3 @@
-from app.services.llama_versatile_ai_service import LlamaVersatileAIService
-from app.services.gpt_oss_ai_service import GptOssAIService
+from app.services.groq_service import GroqService
 
-__all__ = ["LlamaVersatileAIService", "GptOssAIService"]
+__all__ = ["GroqService"]

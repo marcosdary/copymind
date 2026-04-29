@@ -1,7 +1,8 @@
 from fastapi import FastAPI, status
 from typing import Dict
 
-from app.routers.v1 import message_router
+from app.api.v1 import api
+from app.core.config.deps import settings
 
 app = FastAPI(
     title="Copymind",
@@ -9,7 +10,7 @@ app = FastAPI(
     version="0.0.1",
 )
 
-app.include_router(message_router.router)
+app.include_router(api.api_router, prefix=settings.API_V1_STR)
 
 @app.get(
         "/", 

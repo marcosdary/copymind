@@ -1,4 +1,5 @@
-from sqlalchemy import String
+from uuid import uuid4
+from datetime import datetime
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.models.base_model import BaseModel
@@ -7,8 +8,8 @@ from app.models.base_model import BaseModel
 class ConversationModel(BaseModel):
     __tablename__ = "conversations"
 
-    conversation_id: Mapped[str] = mapped_column(String(255), primary_key=True)
-    title: Mapped[str] = mapped_column(String(255), nullable=False)
+    conversationId: Mapped[str] = mapped_column(primary_key=True, default=lambda: str(uuid4()))
+    title: Mapped[str] = mapped_column(nullable=False)
 
     messages: Mapped[list["MessageModel"]] = relationship(
         back_populates="conversation",

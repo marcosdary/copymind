@@ -1,6 +1,6 @@
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, ConfigDict, field_validator
 
-from app.constants import RoleEnum
+from app.core.constants import RoleEnum
 
 
 class CreateMessageSchema(BaseModel):
@@ -8,8 +8,8 @@ class CreateMessageSchema(BaseModel):
     content: str 
     role: RoleEnum
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
+     
 
     @field_validator("role", mode="before")
     def validate_role(cls, value: str) -> RoleEnum:

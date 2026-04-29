@@ -222,3 +222,6 @@ uv.lock
 
 # Codex IA
 .codex 
+
+# db
+database.db
