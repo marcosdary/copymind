@@ -3,10 +3,9 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncEngine, AsyncSessio
 
 from app.core.config.settings import settings
 
-DB_URL = f"postgresql+asyncpg://{settings.USER}@{settings.HOST}:{settings.PORT}/{settings.DATABASE}"
 
 engine: AsyncEngine = create_async_engine(
-    DB_URL,
+    settings.URL_POSTGRES,
     pool_size=10,             # Mantém até 10 conexões abertas
     max_overflow=20,          # Permite até 20 conexões extras em picos
     pool_recycle=3600,        # Recicla conexões a cada hora

@@ -17,11 +17,7 @@ class Settings(BaseSettings):
         extra="ignore"
     )
     API_V1_STR: Optional[str] = "/api/v1"
-    HOST: str
-    USER: str
-    PORT: int
-    PASSWORD: str
-    DATABASE: str
+    URL_POSTGRES: str
     APP_KEY_GROQ: str
     LLAMA_VERSATILE: str
     GPT_OSS: str
