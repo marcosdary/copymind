@@ -4,6 +4,7 @@ from app.core.config.deps import settings
 
 class RoleEnum(str, Enum):
     system = "system"
+    tool = "tool"
     user = "user"
     assistant = "assistant"
 

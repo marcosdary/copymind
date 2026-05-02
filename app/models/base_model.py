@@ -6,4 +6,4 @@ class BaseModel(DeclarativeBase):
     __abstract__ = True
 
     createdAt: Mapped[datetime] = mapped_column(nullable=False, default=datetime.now)
-    updatedAt: Mapped[datetime] = mapped_column(nullable=False, default=datetime.now)
+    updatedAt: Mapped[datetime] = mapped_column(nullable=False, default=datetime.now, onupdate=datetime.now)

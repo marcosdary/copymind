@@ -5,7 +5,7 @@ from app.core.config.settings import settings
 
 
 engine: AsyncEngine = create_async_engine(
-    settings.URL_POSTGRES,
+    settings.URL_MYSQL,
     pool_size=10,             # Mantém até 10 conexões abertas
     max_overflow=20,          # Permite até 20 conexões extras em picos
     pool_recycle=3600,        # Recicla conexões a cada hora
@@ -20,3 +20,7 @@ SessionLocal: AsyncSession = sessionmaker(
     expire_on_commit=False
 )
 
+
+async def get_session():
+    async with SessionLocal() as session:
+        yield session

@@ -17,7 +17,8 @@ class Settings(BaseSettings):
         extra="ignore"
     )
     API_V1_STR: Optional[str] = "/api/v1"
-    URL_POSTGRES: str
+    URL_MYSQL: str
+    URL_SYNC_MYSQL: str
     APP_KEY_GROQ: str
     LLAMA_VERSATILE: str
     GPT_OSS: str

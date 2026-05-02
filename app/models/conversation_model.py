@@ -1,5 +1,4 @@
 from uuid import uuid4
-from datetime import datetime
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.models.base_model import BaseModel
